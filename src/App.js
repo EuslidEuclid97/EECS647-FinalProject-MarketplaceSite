@@ -1,7 +1,9 @@
 
 import NavBar from './NavBar';
 import Home from './Home';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Search from './Search';
+import Account from './Account';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -9,23 +11,13 @@ function App() {
       <div className="App">
         <NavBar/>
         <div className="content">
-          <Switch>
-            <Route path = "/">
-              <Home/>
-            </Route>
-            <Route path = "/Search">
-              <Search/>
-            </Route>
-            <Route path = "/Account">
-              <Account/>
-            </Route>
-            <Route path = "/Account/Cart">
-              <Cart/>
-            </Route>
-            <Route path = "/Search/Item">
-              <Item/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path = "/" element = {<Home/>}></Route>
+            <Route path = "/Search" element = {<Search/>}></Route>
+            <Route path = "/Account" element = {<Account/>}></Route>
+            {/*<Route path = "/Account/Cart" element = {<Cart/>}></Route>*/}
+            {/*<Route path = "/Search/Item" element = {<Item/>}></Route>*/}
+          </Routes>
         </div>
       </div>
     </Router>

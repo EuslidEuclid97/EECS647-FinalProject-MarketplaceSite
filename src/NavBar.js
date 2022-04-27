@@ -1,13 +1,15 @@
+import {Link} from 'react-router-dom';
+
 const NavBar = () => {
     return (  
         <nav className="navbar">
             <h1>Welcome to UBuy.com!</h1>
             <div className="links">
-                <a href="/">Home</a>
-                <a href="/search">Search</a>
-                <a href="/account">Account</a>
-                <a href="/item">ItemSample</a>
-                <a href="/cart">Cart</a>
+                <Link to="/">Home</Link>
+                <Link to="/search">Search</Link>
+                <Link to="/account">Account</Link>
+                <Link to="/item">ItemSample</Link>
+                <Link to="/cart">Cart</Link>
             </div>
         </nav>
     );

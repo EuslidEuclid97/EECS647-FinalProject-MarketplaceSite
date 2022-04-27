@@ -1,22 +1,19 @@
 {
     "users":[
-        {
-            "name": "Zachary Andrews", 
+        { 
             "password": "Poppys33d", 
             "username": "ReactGenius", 
-            "userID": 1
+            "id": 1
         },
         {
-            "name": "Carla", 
             "password": "C00lCat", 
             "username": "ReactGeniusAlso", 
-            "userID": 2
+            "id": 2
         },
         {
-            "name": "Amir Dane", 
             "password": "password", 
             "username": "Password", 
-            "userID": 3
+            "id": 3
         }
     ]
 }
