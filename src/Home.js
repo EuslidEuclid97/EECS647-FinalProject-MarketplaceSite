@@ -18,10 +18,6 @@ const Home = () => {
             setUsers(data);
         })
     }, [])
-
-    const accountRoute = () => {
-
-    }
     
     const handleSignIn = (e) => {
         e.preventDefault();
