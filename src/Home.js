@@ -22,7 +22,7 @@ const Home = () => {
     const handleSignIn = (e) => {
         e.preventDefault();
         setIsPending(true)
-        var foundId = 0;
+        var foundUsername = 0;
         var redirectRoute = ""
         console.log("Should be all users", users)
         const user = {username, password}
@@ -33,7 +33,7 @@ const Home = () => {
             console.log("Should be single user's credentials in db", oneUser.password, oneUser.username)
             console.log("Should be new user credentials", user.username, user.password)
             if(password === oneUser.password || username === oneUser.username){
-                foundId = oneUser.id
+                foundUsername = oneUser.username
                 if(!found){
                     found = 1;
                 }
@@ -43,7 +43,7 @@ const Home = () => {
             //console.log(users);
             setIsPending(false)
             found = 0;
-            history("Accounts/" + foundId)
+            history("Accounts/" + foundUsername)
         }
         else{
             found = 0;
@@ -89,8 +89,9 @@ const Home = () => {
 
     return (  
         <div className="home">
-            <h2>Sign In Page</h2>
+            <div>
             <form onSubmit = {handleSignUp}>
+                <h2>Sign Up</h2>
                 <label>Username</label>
                 <input 
                     type = "text"
@@ -107,10 +108,13 @@ const Home = () => {
                     onChange = {(e) => setNewPassword(e.target.value)}
                 >
                 </input>
-                {!isPending && <button>Sign Up</button>}
+                {!isPending && <button className="signButton">Sign Up</button>}
                 {isPending && <button disabled>Adding user...</button>}
             </form>
+            </div>
+            <div>
             <form onSubmit = {handleSignIn}>
+                <h2>Sign In</h2>
                 <label>Username</label>
                 <input 
                     type = "text"
@@ -127,9 +131,10 @@ const Home = () => {
                     onChange = {(e) => setPassword(e.target.value)}
                 >
                 </input>
-                {!isPending && <button>Sign In</button>}
+                {!isPending && <button className="signButton">Sign In</button>}
                 {isPending && <button disabled>Adding user...</button>}
             </form>
+            </div>
         </div>
     );
 }

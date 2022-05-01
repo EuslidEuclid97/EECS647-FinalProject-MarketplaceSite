@@ -14,9 +14,7 @@ function App() {
           <Routes>
             <Route exact path = "/" element = {<Home/>}></Route>
             <Route path = "/Search" element = {<Search/>}></Route>
-            <Route path = "/Accounts/:id" element = {<Account/>}></Route>
-            {/*<Route path = "/Account/Cart" element = {<Cart/>}></Route>*/}
-            {/*<Route path = "/Search/Item" element = {<Item/>}></Route>*/}
+            <Route path = "/Accounts/:username" element = {<Account/>}></Route>
           </Routes>
         </div>
       </div>

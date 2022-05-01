@@ -1,44 +1,46 @@
 {
-  "users": [
-    {
-      "username": "man1",
-      "password": "p1",
-      "id": 1
+  "users":[
+      { 
+          "password": "Poppys33d", 
+          "username": "ReactGenius", 
+          "id": 1,
+          "productID": 101,
+          "price": 23.99,
+          "quantity": 3,
+          "name": "tshirt",
+          "img": "https://th.bing.com/th/id/OIP.LtpTZte35BVVvf5NyldjIAHaKl?pid=ImgDet&rs=1"
+      },
+      {
+          "password": "C00lCat", 
+          "username": "ReactGeniusAlso", 
+          "id": 2,
+          "productID": 104,
+          "price": 10.25,
+          "quantity": 1,
+          "name": "pants",
+          "img": "https://i5.walmartimages.com/asr/18d2302a-d787-4e8a-b411-fbf3a7c2054a_1.65a7fecb13953a2cd28ea4269819ad84.jpeg"
+      },
+      {
+        "password": "password", 
+        "username": "Password", 
+        "id": 3,
+        "productID": 107,
+        "price": 16.89,
+        "quantity": 7,
+        "name": "shoes",
+        "img": "https://th.bing.com/th/id/R.42f66151a3d8c6fc6071bc15174bd16a?rik=1oV3IE4s31t0fw&riu=http%3a%2f%2fimages.the-house.com%2fvans-sk8-hi-zip-kids-skate-shoes-blk-charcoal-15-1.jpg&ehk=qbH5Qm1xRnG98m0VShrDDiGhxjNNjOvY%2bwxBm%2b7HDXI%3d&risl=&pid=ImgRaw&r=0"
+
     },
     {
-      "username": "man2",
-      "password": "p2",
-      "id": 2
-    },
-    {
-      "username": "man3",
-      "password": "p3",
-      "id": 4
-    },
-    {
-      "username": "man4",
-      "password": "p4",
-      "id": 5
-    },
-    {
-      "username": "man5",
-      "password": "p5",
-      "id": 6
-    },
-    {
-      "username": "man6",
-      "password": "p6",
-      "id": 7
-    },
-    {
-      "username": "man7",
-      "password": "p7",
-      "id": 8
-    },
-    {
-      "username": "man8",
-      "password": "p8",
-      "id": 9
+        "password": "password2", 
+        "username": "Person", 
+        "id": 4,
+        "productID": 114,
+        "price": 9.47,
+        "quantity": 2,
+        "name": "hat",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/71e2iGaFsaL._UL1010_.jpg"
+
     }
   ]
 }
