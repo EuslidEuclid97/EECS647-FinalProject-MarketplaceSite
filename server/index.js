@@ -89,8 +89,12 @@ app.delete('api/products/delete/:id', (req, res) => {
         if(err) console.log(err)})
 })
 
-app.put('api/products/delete/:id', (req, res) => {
-    
+app.put('api/products/update/', (req, res) => {
+    const id = req.body.ProductID
+    const quantity = req.body.Quantity
+    const updateSQL = "UPDATE SET Products Quantity = ? WHERE ProductID = ?"
+    db.query(updateSQL, [quantity, id], (err, result) => {
+        if(err) console.log(err)})
 })
 
 app.listen(3001, () => {

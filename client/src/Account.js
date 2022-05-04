@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AddItem from "./AddItem";
 import './Account.css'
 import Home from "./Home";
+import { Axios } from "axios";
 
 const Account = () => {
 
@@ -35,10 +36,15 @@ const Account = () => {
             if(prod.ProductID === productID){
                 if(prod.Quantity>1){
                     prod.Quantity = prod.Quantity-1
-                    //put
+                    Axios.put('http://localhost:3001/api/products/update', 
+                    {
+                        Quantity: prod.Quantity, 
+                        ProductID: productID
+                    })
                 }
                 else{
-                    //delete
+                    const url = 'http://localhost:3001/api/products/delete/' + productID
+                    Axios.delete(url)
                 }
             }
         })
