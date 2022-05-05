@@ -28,9 +28,9 @@ function App() {
         <div className="content">
           <Routes>
             <Route exact path = "/" element = {<Home/>}></Route>
-            <Route path = "/Search/:username" element = {<Search/>}></Route>
+            <Route path = "/Search" element = {<Search/>}></Route>
             <Route path = "/Accounts/:userID" element = {<Account/>}></Route>
-            <Route path = "/Cart/:username" element = {<Cart/>}></Route>
+            <Route path = "/Cart/:userID" element = {<Cart/>}></Route>
             <Route path = "/AddItem/:userID" element = {<AddItem/>}></Route>
           </Routes>
         </div>
