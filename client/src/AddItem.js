@@ -2,40 +2,42 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import './AddItem.css'
+import { Axios } from "axios";
 
 const AddItem = ()=> {
     
-    const {username} = useParams()
+    const {userID} = useParams()
 
-    const [users, setUsers] = useState('')
-    const [product, setProduct] = useState('')
+    const [products, setProducts] = useState([])
+    const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [image, setImage] = useState('')
 
     const submitItem = () => {
-        var lastID = 0
-        var url
-        fetch('http://localhost:8000/users').then(response => response.json()).then(data => {
-            setUsers(data);   
-        })
-        {users && users.map((user) => {
-            if(user.username === username){
-                user.productID = lastID++
-                user.name = product
-                user.price = price
-                user.quantity = 1
-                url = 'http://localhost:8000/users/' + user.id
-                fetch(url, {
-                method: 'PUT', 
-                body: JSON.stringify(user, {img : image}),
-                headers: {'Content-Type': 'application/json'}
-            }).then(() => {
-                    alert("Item added!")
-                    console.log(users); //maybe display something here
-                })
+        const newQuant = 0;
+        const foundID = 0
+        Axios.get('http://localhost:3001/api/products/select').then((response) => {
+                console.log(response.data)
+                setProducts(response.data)
+            })
+        products.map((prod) => {
+            if(prod.Price === price && prod.Name === name && prod.Pic === image){
+                newQuant = prod.Quantity+1
+                foundID = prod.ProductID
             }
-            lastID = user.productID
-        })}
+        })
+        Axios.post('http://localhost:3001/api/products/insert', {
+            Price: price,
+            Name: name,
+            Quantity: newQuant, 
+            Pic: image
+        })
+        Axios.post('http://localhost:3001/api/sells/insert', {
+            ProductID: foundID,
+            UserID: userID
+        }).then(() => {
+            alert("Item added")
+        })
     }
 
     return (  
@@ -47,8 +49,8 @@ const AddItem = ()=> {
                 <input
                 type = "text"
                 required
-                value = {product}
-                onChange = {(e) => setProduct(e.target.value)}
+                value = {name}
+                onChange = {(e) => setName(e.target.value)}
                 >
                 </input>
                 <label>Price</label>
